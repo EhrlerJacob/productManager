@@ -1,14 +1,21 @@
-// import { useState } from 'react'
-import Header from './components/Header'
-import ProductForm from './components/ProductManager.form'
+import { useState } from 'react'
+import Header from './components/Header';
 import './App.css'
+import {BrowserRouter, Routes, Route} from "react-router-dom";
+import Main from '../views/Main';
+import DisplayProduct from './components/DisplayProduct';
 
-function App() {
+const App = () => {
     return (
         <div className='App'>
-            <Header/>
-            <ProductForm/>
+            <BrowserRouter>
+                <Routes>
+                    <Route element={<Main/>} path="/" default/>
+                    <Route element={<DisplayProduct/>} path="/products/:id"/>
+                </Routes>
+            </BrowserRouter>
         </div>
+        
     );
 }
 
