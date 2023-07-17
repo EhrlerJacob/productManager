@@ -4,7 +4,7 @@ import {useParams, Link} from "react-router-dom";
 
 const DisplayProduct = (props) => {
     const [product, setProduct] = useState({});
-    const {id} = useParams;
+    const {id} = useParams();
     useEffect(() => {
         axios.get(`http://localhost:8000/api/products/${id}`)
             .then( res => {
